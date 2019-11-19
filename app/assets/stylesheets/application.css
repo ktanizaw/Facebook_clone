@@ -53,7 +53,7 @@ footer {
 }
 
 .container {
-  height:500px;
+  height:100%;
 }
 .container h1{
   text-align: center;
@@ -89,4 +89,20 @@ form{
 
 .show-content {
   text-align: center;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  padding:0 15px;
+}
+
+#notice {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
 }
