@@ -52,6 +52,9 @@ footer {
   margin-top: auto;
 }
 
+.container {
+  height:500px;
+}
 .container h1{
   text-align: center;
   font-weight: bold;
@@ -82,5 +85,8 @@ form{
 
 .link-block {
   text-align: center;
-  padding-top:280px;
+}
+
+.show-content {
+  text-align: center;
 }
