@@ -2,7 +2,7 @@
 
 <h1>投稿一覧</h1>
 
-<table>
+<table align="center" style="font-size:24px">
   <thead>
     <tr>
       <th>ユーザー名</th>
@@ -16,9 +16,22 @@
         <td><%= feed.user.name %></td>
         <td><%= feed.title %></td>
         <td><%= image_tag "#{feed.image}", :size =>'80x80' %></td>
-        <td><%= link_to '詳細', feed %></td>
-        <td><%= link_to '編集', edit_feed_path(feed) %></td>
-        <td><%= link_to '削除', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <button type="button" class="btn btn-primary btn-md">
+          <%= link_to '詳細', feed , :style=>"color:white;"%>
+          </button>
+        </td>
+
+        <td>
+          <button type="button" class="btn btn-success btn-md">
+          <%= link_to '編集', edit_feed_path(feed), :style=>"color:white;" %>
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger btn-md">
+          <%= link_to '削除', feed, method: :delete, data: { confirm: '本当に削除しますか？' }, :style=>"color:white;" %>
+          </button>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -18,12 +18,12 @@
         <td><%= user.email %></td>
         <td>
           <button type="button" class="btn btn-success btn-md">
-          <%= link_to '編集', edit_user_path(user) %>
+          <%= link_to '編集', edit_user_path(user), :style=>"color:white;" %>
           </button>
         </td>
         <td>
           <button type="button" class="btn btn-danger btn-md">
-          <%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除しますか?' } %>
+          <%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除しますか?' }, :style=>"color:white;" %>
           </button>
         </td>
       </tr>
