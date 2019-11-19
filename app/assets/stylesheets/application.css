@@ -106,3 +106,12 @@ td {
   font-weight: bold;
   color: red;
 }
+
+.title-text {
+  font-size:32px;
+}
+
+.show-img {
+  text-align: center;
+  padding: 80px 0;
+}
