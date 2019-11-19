@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>登録完了アカウント</h1>
 
-<table>
+<table align="center" style="font-size:24px">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password</th>
+      <th class="table-text">名前</th>
+      <th class="table-text">メールアドレス</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,10 +16,16 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= user.password %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <button type="button" class="btn btn-success btn-md">
+          <%= link_to '編集', edit_user_path(user) %>
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger btn-md">
+          <%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除しますか?' } %>
+          </button>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +33,7 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<div class="link-block">
+<%= link_to 'ホーム画面へ', feeds_path, :style=>"font-size:24px;" %><br>
+<%= link_to '新規アカウント登録画面へ', new_user_path, :style=>"font-size:24px;" %>
+</div>
