@@ -37,6 +37,12 @@ class FeedsController < ApplicationController
     end
   end
 
+  def confirm
+    @feed = Feed.new(feed_params)
+    @feed.user_id = current_user.id #現在ログインしているuserのidを、feedのuser_idカラムに挿入する
+    render :new if @feed.invalid?
+  end
+
   # PATCH/PUT /feeds/1
   # PATCH/PUT /feeds/1.json
   def update
