@@ -17,15 +17,11 @@ class FeedsController < ApplicationController
 
   def create
     @feed = current_user.feeds.build(feed_params)
-    respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
-        format.json { render :show, status: :created, location: @feed }
+        redirect_to feeds_path, notice: "投稿しました！"
       else
-        format.html { render :new }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
   end
 
   def confirm
@@ -60,6 +56,6 @@ class FeedsController < ApplicationController
     end
 
     def feed_params
-      params.require(:feed).permit(:image, :image_cache)
+      params.require(:feed).permit(:image, :title, :image_cache)
     end
 end
