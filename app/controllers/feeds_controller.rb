@@ -16,13 +16,11 @@ class FeedsController < ApplicationController
   end
 
   def create
-    if logged_in?
-      @feed = current_user.feeds.build(feed_params)
-      @feed.save
+    @feed = current_user.feeds.build(feed_params)
+    if @feed.save
       redirect_to feeds_path, notice: "投稿しました！"
-    elsif
-　　　     redirect_to feeds_path, notice: "ログインしてください"
-    else render 'new'
+    else
+      render 'new'
     end
   end
 
@@ -50,14 +48,14 @@ class FeedsController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
 
   private
 
   def set_feed
-    @feed = Feed.find(params[:id])
+  @feed = Feed.find(params[:id])
   end
 
   def feed_params
-    params.require(:feed).permit(:image, :title, :image_cache)
+  params.require(:feed).permit(:image, :title, :image_cache)
   end
+end
