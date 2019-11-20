@@ -21,15 +21,16 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+gem 'bcrypt', '3.1.11'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'pry-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
+
 group :development, :test do
 
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'bcrypt', '3.1.11'
-  gem 'carrierwave'
-  gem 'mini_magick'
-  gem 'pry-rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'dotenv-rails'
 end
 
