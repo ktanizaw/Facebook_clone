@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: [:show, :edit, :update, :destroy]
+  before_action :set_feed, only: [:show, :edit, :update, :destroy, :new]
 
   def index
     @feeds = Feed.all
@@ -17,11 +17,11 @@ class FeedsController < ApplicationController
 
   def create
     @feed = current_user.feeds.build(feed_params)
-    if @feed.save
-      redirect_to feeds_path, notice: "投稿しました！"
-    else
-      render 'new'
-    end
+      if @feed.save
+        redirect_to feeds_path, notice: "投稿しました！"
+      else
+        render 'new'
+      end
   end
 
   def confirm
@@ -58,4 +58,5 @@ class FeedsController < ApplicationController
   def feed_params
   params.require(:feed).permit(:image, :title, :image_cache)
   end
+
 end
