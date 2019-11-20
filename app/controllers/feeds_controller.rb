@@ -17,17 +17,20 @@ class FeedsController < ApplicationController
   end
 
   def create
+    if params[:back]
+      render :new
+    else
     @feed = current_user.feeds.build(feed_params)
       if @feed.save
         redirect_to feeds_path, notice: "投稿しました！"
       else
         render 'new'
       end
+    end
   end
 
   def confirm
-    @feed = current_user.feeds.build(feed_params)
-    render :new if @feed.invalid?
+    @feed = Feed.new(feed_params)
   end
 
   def update

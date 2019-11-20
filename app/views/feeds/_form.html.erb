@@ -1,4 +1,4 @@
-<%= form_with(model: feed, local: true) do |form| %>
+<%= form_with(model: feed, local: true, url: confirm_feeds_path) do |form| %>
   <% if feed.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(feed.errors.count, "error") %></h2>
@@ -15,8 +15,9 @@
     <strong>タイトル</strong>
     <%= form.text_field :title %>
     <%= form.label :image %>
+    <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
     <%= form.file_field :image %>
-
+    <%= form.hidden_field :image_cache %>
   </div>
 
   <div class="actions">
