@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<strong class="title-text">画像タイトル：<%= @feed.title %></strong>
+<div class="title-text">
+<strong>画像タイトル：<%= @feed.title %></strong>
+</div>
 
 <p class="show-img">
   <%= image_tag @feed.image.url %>
 </p>
 
 <div class="link-block">
-<%= link_to '編集', edit_feed_path(@feed), :style=>"font-size:32px; font-weight:bold;"  %> |
+<%= link_to '編集画面へ', edit_feed_path(@feed), :style=>"font-size:32px; font-weight:bold;"  %> |
 <%= link_to '戻る', feeds_path, :style=>"font-size:32px; font-weight:bold;"  %>
 </div>
