@@ -11,9 +11,7 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
-  <% end %>
+
   <div class="wrapper">
 
   <header>
@@ -21,8 +19,12 @@
       <i class="fas fa-book-open fa-3x header-icon"></i>
       <h1><%= link_to 'Fakebook', feeds_path, :style=>"color:white;" %></h1>
     </div>
+<div class="header-btn">
 
     <div class="header-btn">
+      <button type="button" class="btn btn-light btn-md">
+        <%= link_to 'ユーザー一覧', users_path if logged_in? %>
+      </button>
       <% if logged_in? %>
       <button type="button" class="btn btn-light btn-md">
         <%= link_to "プロフィール", user_path(current_user.id) %>

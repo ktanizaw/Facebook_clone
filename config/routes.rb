@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   root to: "feeds#index"
     resources :feeds do
     resources :comments
@@ -8,4 +10,5 @@ Rails.application.routes.draw do
 end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
+  resources :relationships, only: [:create, :destroy]
 end

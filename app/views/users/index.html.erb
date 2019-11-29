@@ -16,6 +16,7 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
+        <td><%= render 'follow_form', user: user %></td>
         <td>
           <button type="button" class="btn btn-success btn-md">
           <%= link_to '編集', edit_user_path(user), :style=>"color:white;" %>
