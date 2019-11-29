@@ -8,6 +8,14 @@
   <%= image_tag @feed.image.url %>
 </p>
 
+<div id="comments_area">
+  <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+  <%= render partial: 'comments/index', locals: { comments: @comments, feed: @feed } %>
+</div>
+
+<!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+<%= render partial: 'comments/form', locals: { comment: @comment, feed: @feed } %>
+
 <div class="link-block">
 <%= link_to '編集画面へ', edit_feed_path(@feed), :style=>"font-size:32px; font-weight:bold;"  %> |
 <%= link_to '戻る', feeds_path, :style=>"font-size:32px; font-weight:bold;"  %>
