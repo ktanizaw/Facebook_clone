@@ -11,4 +11,7 @@ end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :relationships, only: [:create, :destroy]
+  resources :conversations do
+  resources :messages
+end
 end
