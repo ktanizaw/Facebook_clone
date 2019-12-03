@@ -19,10 +19,14 @@
 </div>
 
 <tr>
-  <td>フォローしている人</td>
-  <td><%= @user.following %></td>
-  <td>フォローされている人</td>
-  <td><%= @user.followers %></td>
+  <th>フォローしている人</th>
+  <% @user.following.each do |user| %>
+  <td><%= user.name %></td>
+  <% end %>
+  <th>フォローされている人</th>
+  <% @user.followers.each do |user| %>
+  <td><%= user.name %></td>
+  <% end %>
 </tr>
 
 <div class="link-block">
