@@ -24,8 +24,14 @@ gem 'unicorn'
 gem 'mini_racer', platforms: :ruby # デプロイ時に必要
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
+gem 'fog-aws'
+
+group :production, :staging do
+  gem 'unicorn'
+end
 
 group :development, :test do
+  gem 'fog-aws'
   gem 'capistrano', '3.6.0' # capistranoのツール一式
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
