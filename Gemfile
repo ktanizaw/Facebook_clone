@@ -20,8 +20,10 @@ gem 'pry-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
-gem 'unicorn' # アプリケーションサーバのunicorn
+gem 'unicorn'
 gem 'mini_racer', platforms: :ruby # デプロイ時に必要
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
 
 group :development, :test do
   gem 'capistrano', '3.6.0' # capistranoのツール一式
