@@ -65,14 +65,4 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
-
-  after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      invoke 'unicorn:stop'
-      invoke 'unicorn:start'
-    end
-  end
-end
 end
